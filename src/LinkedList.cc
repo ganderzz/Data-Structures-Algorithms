@@ -4,13 +4,13 @@ LinkedList::LinkedList() {
     this->root = new Node::Node();
 }
 
-LinkedList::~LinkedList() {
-    Node::Node* n = this->root;
-    while(n != nullptr) {
-        this->Remove(n->value);
-    }
+LinkedList::~LinkedList() {  
+    while(this->root != nullptr) {
+        Node::Node* temp = this->root->next;
+        delete this->root;
 
-    delete this;
+        this->root = temp;
+    }
 }
 
 void LinkedList::Add(int value) {

@@ -13,5 +13,7 @@ int main() {
 
     std::cout << t->ToString() << std::endl;
 
+    delete t;
+
     return 0;
 }
