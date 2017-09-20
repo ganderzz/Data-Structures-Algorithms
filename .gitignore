@@ -3,4 +3,4 @@
 buck-out
 
 a.out
-a.out*
+a.out.dSYM/*

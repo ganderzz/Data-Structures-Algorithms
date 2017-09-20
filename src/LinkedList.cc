@@ -2,15 +2,19 @@
 
 LinkedList::LinkedList() {
     this->root = new Node::Node();
+    this->count = 0;
 }
 
 LinkedList::~LinkedList() {  
-    while(this->root != nullptr) {
-        Node::Node* temp = this->root->next;
-        delete this->root;
+    Node::Node* curr = this->root->next;
 
-        this->root = temp;
+    while(curr != nullptr) {
+        Node::Node* prev = curr;
+        curr = curr->next;
+        delete prev;
     }
+
+    delete this->root;
 }
 
 void LinkedList::Add(int value) {
@@ -20,6 +24,7 @@ void LinkedList::Add(int value) {
     }
 
     n->next = new Node::Node(value);
+    this->count++;
 }
 
 void LinkedList::Remove(int value) {
@@ -29,11 +34,18 @@ void LinkedList::Remove(int value) {
         if (n->value == value) {
             prev->next = n->next;
             delete n;
+
+            this->count--;
+
             break;  
         }
         prev = prev->next;
         n = n->next;
     }
+}
+
+int LinkedList::Count() {
+    return this->count;
 }
 
 std::string LinkedList::ToString() {

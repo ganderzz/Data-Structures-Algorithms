@@ -8,10 +8,13 @@ int main() {
     t->Add(10);
 
     std::cout << t->ToString() << std::endl;
+    std::cout << "Count: " << t->Count() << std::endl;
 
     t->Remove(5);
+    t->Remove(2);
 
     std::cout << t->ToString() << std::endl;
+    std::cout << "Count: " << t->Count() << std::endl;
 
     delete t;
 
