@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./src/LinkedList.h"
+#include "./LinkedList.h"
 
 int main() {
     LinkedList* t = new LinkedList();

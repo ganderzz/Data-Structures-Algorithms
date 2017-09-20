@@ -1,8 +1,8 @@
 cxx_binary(
-  name = 'main',
+  name = 'linkedlist',
   srcs = [
-    'Main.cc',
-    './src/Node.cc',
-    './src/LinkedList.cc'
+    './src/LinkedList/Main.cc',
+    './src/LinkedList/Node.cc',
+    './src/LinkedList/LinkedList.cc'
   ],
 )
