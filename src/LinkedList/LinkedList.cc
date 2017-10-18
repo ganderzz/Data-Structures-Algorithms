@@ -44,6 +44,14 @@ void LinkedList::Remove(int value) {
     }
 }
 
+int LinkedList::GetFirst() {
+    if (this->root->next != nullptr) {
+        return this->root->next->value;
+    }
+
+    return -1;
+}
+
 int LinkedList::Count() {
     return this->count;
 }
